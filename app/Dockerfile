@@ -11,6 +11,8 @@ ENV PYTHONUNBUFFERED 1
 # install psycopg2 dependencies
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev
+
+#instal dependencies needed for Pillow Package
 RUN apk add zlib-dev jpeg-dev gcc musl-dev
 
 # install dependencies
