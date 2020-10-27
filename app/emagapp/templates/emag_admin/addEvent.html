@@ -1,0 +1,103 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/index.css'%}" />
+    <script src="https://cdn.ckeditor.com/4.14.0/full/ckeditor.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="mb-5">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light text-white static-top mb-5" style="background-color: #2e3787">
+            <div class="container">
+                <a class="navbar-brand text-white" href="#">EMAGAZINE</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/logout/">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <h1 class="text-center mb-5 text-uppercase">Add event</h1>
+        <div class="container">
+            <form action="/event/add" enctype="multipart/form-data" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Event Title</label>
+                    <input type="text" class="form-control title" id="formGroupExampleInput" placeholder="" name="title" required />
+                </div>
+                <label for="post_content">Event Content</label>
+                <textarea name="editor" id="post_content" required></textarea>
+                <br />
+                <label for="cat">Category</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                    </div>
+                    <select name="category" class="custom-select" id="inputGroupSelect01">
+                        <option selected>Choose...</option>
+                        <option value="Fest">Fest</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Activity">Activity</option>
+                    </select>
+                </div>
+                <label for="tag">Tags</label>
+                <br />
+                <input class="form-control" type="text" placeholder="" name="tag" id="tag" required />
+                <div class="row my-3">
+                    <div class="col-lg-6">
+                        <label for="">Upload Event Data</label>
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <input name="data" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" />
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="">Upload Event Banner</label>
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <input name="banner" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" />
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-lg-4">
+                        <label for="">Organised by</label>
+                        <input name="organised_by" class="form-control" type="text" placeholder="" name="organised_by" />
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="">Sponsored by</label>
+                        <input name="sponsored_by" class="form-control" type="text" placeholder="" name="sponsored_by" />
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="">Event Date</label>
+                        <input class="form-control" type="text" placeholder="" name="event_date" />
+                    </div>
+                </div>
+                <button type="submit" class="btn button mb-2 btn-block">PUBLISH</button>
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+                <script>
+                    CKEDITOR.replace("editor");
+                </script>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

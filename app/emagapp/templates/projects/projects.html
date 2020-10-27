@@ -1,0 +1,39 @@
+{% extends 'index.html' %} {% load static %} {% block body %}
+
+<!-- Page Content -->
+<div class="container">
+    <div class="main-display-wrapper">
+        <div class="display-content" style="overflow-x: hidden">
+            {% for project in projects %}
+            <div class="card shadow mb-5" data-aos="slide-right" data-aos-duration="1000">
+                <img class="card-img-top" src="{{ project.project_banner.url }}" alt="Card image cap" />
+                <div class="card-body">
+                    <h3 class="card-title font-weight-bold"><a href="/project/{{ project.id }}">{{ project.project_title }}</a></h3>
+                    <p class="font-weight-bold text-muted">{{ project.uploaded_at }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="categories-list">
+            <div class="form-group has-search">
+                <span class="fa fa-search form-control-feedback"></span>
+                <input type="text" class="form-control" placeholder="Search" />
+            </div>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active" style="background-color: #2e3787; border: none;">Categories</a
+            >
+            <a href="/categories/events/" class="list-group-item list-group-item-action"
+              >Events</a
+            >
+            <a href="/categories/projects/" class="list-group-item list-group-item-action"
+              >Projects</a
+            >
+            <a href="#" class="list-group-item list-group-item-action"
+              >Achievements</a
+            >
+          </div>
+        </div>
+      </div>
+        </div>
+    </div>
+{% endblock %}

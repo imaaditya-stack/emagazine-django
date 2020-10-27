@@ -1,0 +1,64 @@
+{% extends 'index.html' %} {% load static %} {% block body %}
+<div class="content-wrapper">
+    {% if warning %}
+    <div class="alert alert-primary text-center alert-dismissible fade show" role="alert">
+        {{ warning }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %} {% if success %}
+    <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+        {{ success }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
+    <div class="main-content container row m-auto pt-5" style="overflow-x: hidden">
+        <div class="col-lg-6 m-auto" data-aos="zoom-in" data-aos-duration="1000">
+            <h1 class="font-weight-bold">
+                Join us & Explore Events, Activities, Projects, Workshops and much more
+            </h1>
+        </div>
+        <div class="col-lg-6" data-aos="zoom-in" data-aos-duration="1000">
+            <img class="img-fluid" src="{% static 'img/cover.jpg'%}" alt="" />
+        </div>
+    </div>
+    <div class="emagazine-info-wrapper">
+        <div class="container">
+            <div class="row" style="overflow-x: hidden">
+                <div class="col-lg-6 mb-lg-0 mb-sm-4 mb-4" data-aos="slide-right" data-aos-duration="1000">
+                    <img class="img-fluid" src="https://images.pexels.com/photos/6214/hands-people-woman-girl.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" />
+                </div>
+                <div class="col-lg-6 m-auto" data-aos="slide-left" data-aos-duration="1000">
+                    <h1 class="font-weight-bold text-white">
+                        An Online Magazine, dedicated to Event Updates and much more
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="subscribe-wrapper">
+        <div class="container">
+            <div class="row" style="overflow-x: hidden">
+                <div class="col-lg-6 m-auto" data-aos="slide-right" data-aos-duration="1000">
+                    <h1 class="font-weight-bold">Subscribe to our Emagazine</h1>
+                    <h5>Get new updates right in your inbox</h5>
+                    <form action="/add/subscriber" method="POST">
+                        {% csrf_token %}
+                        <input name="email" class="form-control subscribe-input" type="email" required placeholder="Enter your email" />
+                        <button type="submit" class="btn button my-2 btn-block subscribe-btn">
+                            SUBSCRIBE
+                        </button>
+                    </form>
+                </div>
+                <div class=" col-lg-6 mb-lg-0 mb-sm-4 mb-4" data-aos="slide-left" data-aos-duration="1000">
+                    <img class="img-fluid " src="{% static 'img/subscribe.jpg'%} " alt=" " />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

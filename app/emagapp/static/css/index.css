@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700&display=swap");
+body {
+    font-family: 'BioRhyme', sans-serif;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-color: #fff;
+}
+
+
+/* -----------------------Global Styles------------------------- */
+
+.button {
+    background-color: #2e3787;
+    color: #fff;
+    padding: 10px 20px;
+    outline: none;
+    box-shadow: none;
+}
+
+.button:hover,
+.button:active {
+    background-color: #4f558f;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+hr {
+    width: 100px;
+    background-color: #2e3787;
+    height: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: #111;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #2e3787;
+}
+
+.footer {
+    background-color: #111;
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+
+/* -----------------------Global Styles End--------------------- */
+
+
+/* -----------------------Navbar Styles------------------------- */
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 10px;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 10px;
+}
+
+
+/* -----------------------Navbar Styles End------------------------- */
+
+.main-display-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+}
+
+.about-us-wrapper {
+    padding: 80px 0;
+    margin-bottom: 80px;
+}
+
+.event-category {
+    background-color: #2e3787;
+    width: 25%;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.organised-by,
+.sponsored-by {
+    background-color: #fafafa;
+    padding: 20px;
+    border-left: 7px #2e3787 solid;
+    text-align: center;
+}
+
+.event-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+}
+
+.event {
+    background-color: #fff;
+}
+
+.emagazine-info-wrapper,
+.about-us-wrapper {
+    width: 100%;
+    background-color: #111;
+    padding: 120px 0;
+    margin-bottom: 120px;
+    margin-top: 100px;
+    color: #fff;
+}
+
+.category-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    color: #fff;
+}
+
+.category-wrapper a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.category {
+    text-align: center;
+    background-color: #02042b;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    border: none;
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.event-section h2,
+.achievement-section h2,
+.project-section h2 {
+    letter-spacing: 2px;
+}
+
+.login-form form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.subscribe-input {
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.subscribe-btn {
+    border-radius: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    h1,
+    h2,
+    h3 {
+        font-size: 20px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    .achievement-section,
+    .event-section,
+    .project-section {
+        padding: 10px;
+        border: 1px #eee solid;
+    }
+    .main-display-wrapper {
+        display: block;
+    }
+    .categories-list {
+        margin-bottom: 20px;
+    }
+    .login-form form {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .nav-link {
+        margin: 0px;
+    }
+    .organised-by h3,
+    .sponsored-by h3 {
+        font-size: 16px;
+    }
+}

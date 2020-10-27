@@ -1,0 +1,61 @@
+{% extends 'index.html' %} {% load static %} {% block body %}
+
+<!-- Page Content -->
+<div class="container">
+    <div class="main-display-wrapper">
+        <div class="display-content" data-aos="fade" data-aos-duration="1000">
+            <div class="banner">
+                <img class="img-fluid" src="{{ project.project_banner.url }}" alt="" />
+            </div>
+            <br />
+            <div class="title">
+                <h1>{{ project.project_title }}</h1>
+            </div>
+            <div class="date-uploaded">
+                <p class="font-weight-bold text-muted">
+                    by {{ project.user_id.full_name }}, {{ project.uploaded_at }}
+                </p>
+            </div>
+            <div class="content">
+                <p>{{ project.project_description | safe}}</p>
+            </div>
+            <div class="project-data text-center">
+                {% if project.project_data %}
+                <p>
+                    <a class="btn button" href="{{ project.project_data.url }}" download>Download Reference</a
+          >
+        </p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="categories-list">
+      <div class="form-group has-search">
+        <span class="fa fa-search form-control-feedback"></span>
+        <input type="text" class="form-control" placeholder="Search" />
+      </div>
+      <div class="list-group">
+        <a
+          href="#"
+          class="list-group-item list-group-item-action active"
+          style="background-color: #2e3787; border: none"
+          >Categories</a
+        >
+        <a
+          href="http://localhost:8000/categories/events/"
+          class="list-group-item list-group-item-action"
+          >Events</a
+        >
+        <a
+          href="http://localhost:8000/categories/projects/"
+          class="list-group-item list-group-item-action"
+          >Projects</a
+        >
+        <a href="#" class="list-group-item list-group-item-action"
+          >Achievements</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
