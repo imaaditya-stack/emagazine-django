@@ -1,7 +1,6 @@
 <h1 align="center"> Emagazine </h1> 
 Emagazine is an Open Source Web Application Project made for Colleges to use to manage inforamation about different types of events and so in a smart way. Students can able to keep track of upcoming events in the College.
 
-
 ### Tech Stack 🛠️
 
 1. Designing: Html5, CSS3, Bootstarp 4
