@@ -19,7 +19,7 @@ Emagazine is an Open Source Web Application Project made for Colleges to use to 
 ### Clone and use 📋
 
 ```
-git clone 
+git clone https://github.com/imaaditya-stack/emagazine-django.git
 ```
 
 ### Development
